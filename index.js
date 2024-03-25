@@ -1,16 +1,13 @@
 /*
-scope of var b - where I can access this var b
-Is b inside scope of a xyz function
+Before initialization, let and const are in temporal dead zone
+We can't access variables when they are in temporal dead zone
 */
 
-function a(){           //a is lexically inside global scope
-    var b =10;
-    c()                 // c is lexically inside a 
-    function c()        //closure of c is a(lexical scope)
-    {
-        var z = 20
-        console.log(b)
-    }
-}
 
-a()
+console.log(a) //prints undefined
+console.log(b) //Uncaught Reference Error - Can't access b before initialization
+console.log(c)
+
+var a = 10
+let b = 20
+const c = 30
