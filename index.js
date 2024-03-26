@@ -1,27 +1,32 @@
-function print1()
-{
-    console.log('print1')
+//Higher Order Functions
+
+const area = function(radius){
+    return Math.PI*radius*radius;
 }
 
-
-var print2 = function(){
-    console.log('print2')
+const circumference = function(radius){
+    return Math.PI*2*radius;
 }
 
-var print3 = function sample(){
-    console.log('print3')
+function calculate(logic, radius){
+    for(var i=1; i < radius; i++)
+    {
+        console.log(logic(i));
+    }
 }
 
-var print4 = () =>{
-    return 'print4'
+//calculate(area,5);
+//calculate(circumference, 5);
+
+const arr = [1,2,3,4,5]
+//to add a func as array method
+
+Array.prototype.func = function(logic){ //access elements of array using this
+    for(var i=1; i< this.length; i++)
+    {
+        console.log(logic(i));
+    }
 }
 
-var print5 = ()=> 'print5'
-
-
-
-print1();
-print2();
-print3();
-console.log(print4());
-console.log(print5());
+console.log(arr.map(area));
+arr.func(area)
