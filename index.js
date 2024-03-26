@@ -1,13 +1,26 @@
-/*
-Before initialization, let and const are in temporal dead zone
-We can't access variables when they are in temporal dead zone
+{
+    // this is a block
+}
+
+var a = 50;
+
+{
+    var a = 10   //global scope - accessible out of this block as well - Shadowing
+    let b = 20   //Block scope  - present only in this block
+    const c = 30 //Block scope
+}
+
+console.log(a); //prints 10(not 50)
+
+
+//Illegal shadowing 
+// let a = 20; - we can't define let a since var a is in same scope
+
+/*   similarly, this gives error
+
+let z = 50;
+{
+    var z = 20;
+}
+
 */
-
-
-console.log(a) //prints undefined
-console.log(b) //Uncaught Reference Error - Can't access b before initialization
-console.log(c)
-
-var a = 10
-let b = 20
-const c = 30
