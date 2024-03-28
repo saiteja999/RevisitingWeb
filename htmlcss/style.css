@@ -1,0 +1,29 @@
+/* we rarelt use html selectors(p, div). Instead, we use class and id selectors  */
+
+.class1{
+    color: green;
+}
+
+.class2{
+    border: 2px solid black;
+}
+
+#id1{ 
+    color: blue;
+}
+
+.green{
+    background-color: green;
+}
+
+.red{
+    font-size: 1em;
+}
+
+h1.class2#id1 , span, .green{
+    background-color: blueviolet;
+}
+
+div p{ /*all paragraphs in div */
+
+}
