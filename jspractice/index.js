@@ -1,51 +1,59 @@
-arr =[1,2,3,4]
+const cart = ["shoes", "pants", "kurta"];
 
-function double(x){
-    return x*2
+const GITHUB_API = "https://api.github.com/users/akshaymarch7";
+
+//consuming a promise
+
+const user = fetch(GITHUB_API);
+
+user.then(function (data) {
+  console.log(data);
+});
+
+//Creating a promise
+function createOrder(cart) {
+  const id = 10;
+
+  const pr = new Promise(function (resolve, reject) {
+    if (true) {
+      resolve(id);
+    } else {
+      const err = new Error("cart is not valid");
+      reject(err);
+    }
+  });
+
+  return pr;
 }
 
-function isEven(x){
-    return x%2 ==0
+function printId(id) {
+  console.log(id);
 }
 
-console.log(arr.map(double));
-console.log(arr.filter(isEven))
+/*
 
-console.log(arr.reduce((acc,curr)=> acc+curr, 0))
+createOrder()
+  .then(function (id) {
+    printId(id);
+  })
+  .catch(function (err) {
+    console.log(err.message);
+  });
 
-const op = arr.reduce(function(acc,curr){
-    if(curr%2 == 0)
-        acc+=curr
-    return acc;
-},0)
+*/
 
-console.log(op)
+//async-await
 
+const p = new Promise((resolve, reject) => {
+    setTimeout(()=>{
+        resolve("promise resolved")
+    }, 5000)
+})
 
-const op1 = arr.reduce(function(max,curr){
-    if(max<curr)
-    max = curr
+async function handlePromise() {
+  const val = await p;
+  console.log(val);
+  console.log("after await")
+}
 
-    return max;
-},0)
-
-console.log(op1)
-
-
-const users =[
-    {name: 'user1', age:26},
-    {name: 'user2', age:32},
-    {name: 'user3', age:26},
-    {name: 'user4', age:53}
-]
-
-const dict = users.reduce(function(acc, curr){
-    if(acc[curr.age])
-        acc[curr.age]++;
-    else
-        acc[curr.age] = 1;
-
-    return acc;
-}, {})
-
-console.log(dict);
+handlePromise();

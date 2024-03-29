@@ -1,45 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href = "style.css" rel = "stylesheet">
-
     <style>
-        div.internal{
-            color:brown;
+        .parent {
+            width: 200px;
+            border: 1px solid black;
         }
 
-        p{
-            /*color: rgb(255,255,0);*/
-            background-color: transparent
+        .item {
+            background-color: red;
+            height: 50px;
+            margin: 5px 0;
         }
 
-        #specificid{
-            color: red
+        .item-percent{
+            width: 50%
         }
 
-        .specificclass{
-            color: green
+        .item-view-width{
+            width: 50vw;
         }
 
-        div.hoverclass:hover{
-            color: aqua;
-            font-size: 22px
+        .rem{
+            font-size: 1rem;
+        }
+
+        .rem-double{
+            font-size: 2rem;
         }
     </style>
 </head>
+
 <body>
-    <div style="color: orange"> Inline styling</div>
-    <div class="internal">Internal styling</div>
-    <div class="class1 class2">Using mutliple classes to style element</div>
-    <div id="id1" class="class2">Using id and class</div>
-    <h1 class="class2" id="id1">selecting element with class and id</h1>
-    <p class ="class10">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolore repellendus dolor minus doloremque quas? Quisquam
-        totam nihil ut, quam reiciendis ducimus nesciunt laboriosam expedita cupiditate magnam accusantium, illum rem nulla!
-    </p>
-    <div id="specificid" class="specificclass"> perfers id over class - specificity</div>
-    <div class = "hoverclass">Hover over this text</div>
+    <div class="item rem"> REM</div>
+    <div class="item rem-double">2 REM</div>
+
+    <div class="parent">
+        <div class="item"> REM</div>
+        <div class="item"></div>
+        <div class ="item item-view-width">width:50%</div>
+    </div>
 </body>
+
 </html>
