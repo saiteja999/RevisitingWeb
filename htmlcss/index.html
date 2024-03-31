@@ -3,39 +3,48 @@
 
 <head>
     <style>
-        div{
-            color: blue;
-            background-color: red;
-            width: 300px;
-            display: inline-block;
-        }
-        span{
-            color:green;
-            display: none;
+        .item{
+            border: 1px solid #333;
+            background-color: #777;
+            width: 150px;
+            color: yellow;
+            margin: 10px;
         }
 
-        .img1{
-            width: 100px;
-            height: 200px;
-            float: right; /*img1 always floats to left and text is wrapped around it */
+        .container{
+            display: flex;
+            height: 600px;
+            background-color: #CCC;
+            border: 1px solid black;
+            justify-content: space-around;
+            align-content:space-around;
+            align-items: flex-start ;
         }
 
-        .img2{
-            width: 100px;
-            height: 100px;
-            float: left;
+        .item1{
+            min-height: 50px;
         }
 
-        P{
-            clear: both;
+        .item2{
+            min-height: 100px;
+            flex-grow: 1;
+            flex-shrink: 1;
+        }
+
+        .item3{
+            min-height: 150px;
+            flex-grow: 2;
+            flex-shrink: 2;
         }
     </style>
 </head>
 
 <body>
-    <img class ="img1" src ="https://source.unsplash.com/4rDCa5hBlCs">
-    <img class ="img2" src ="https://source.unsplash.com/oR0uERTVyD0">
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam laudantium quaerat harum facere nesciunt cumque veritatis consequatur sit autem tempora, numquam perferendis nostrum minus aperiam dignissimos temporibus blanditiis! Voluptate tenetur iure deleniti ad explicabo debitis fuga minima, soluta expedita qui veritatis et sequi modi recusandae deserunt cupiditate distinctio obcaecati totam. Delectus reiciendis debitis, blanditiis eos accusantium incidunt dolore magnam aliquam, enim aperiam repellat consequuntur nesciunt hic optio modi laudantium? Labore sequi, tenetur minus dolorum pariatur iste nesciunt ex quae qui rerum veniam fuga odio aliquam perspiciatis quibusdam accusamus blanditiis vel placeat magni! Nostrum asperiores assumenda optio vero dicta! Cupiditate, vitae?</p>
-</body>
+    <div class = "container">
+        <div class="item item1">1</div>
+        <div class="item item2">2</div>
+        <div class="item item3">3</div>
+    </div>
+ </body>
 
 </html>
