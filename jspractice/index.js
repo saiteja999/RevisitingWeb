@@ -1,59 +1,41 @@
-const cart = ["shoes", "pants", "kurta"];
+"use strict"
 
-const GITHUB_API = "https://api.github.com/users/akshaymarch7";
+console.log(this)
 
-//consuming a promise
+function print(){
+    console.log(this);
+}
 
-const user = fetch(GITHUB_API);
+print() //null
+window.print() //window
 
-user.then(function (data) {
-  console.log(data);
-});
 
-//Creating a promise
-function createOrder(cart) {
-  const id = 10;
-
-  const pr = new Promise(function (resolve, reject) {
-    if (true) {
-      resolve(id);
-    } else {
-      const err = new Error("cart is not valid");
-      reject(err);
+let name={
+    fname: "sai",
+    lname: "ravi",
+    printFullName: function(){
+        console.log(this.fname + " " + this.lname)
     }
-  });
-
-  return pr;
 }
 
-function printId(id) {
-  console.log(id);
+let name2 ={
+    fname: "sachin",
+    lname: "tendulkar"
 }
 
-/*
+name.printFullName.call(name2) //obj2 using method of obj1
 
-createOrder()
-  .then(function (id) {
-    printId(id);
-  })
-  .catch(function (err) {
-    console.log(err.message);
-  });
-
-*/
-
-//async-await
-
-const p = new Promise((resolve, reject) => {
-    setTimeout(()=>{
-        resolve("promise resolved")
-    }, 5000)
-})
-
-async function handlePromise() {
-  const val = await p;
-  console.log(val);
-  console.log("after await")
+let  printFullName = function(param1, param2){   //function not attached to any object
+    console.log(this.fname + " " + this.lname + " "+ param1 + " "+ param2)
 }
 
-handlePromise();
+printFullName.call(name, "string1", "string2") //1st argument is always reference to this
+printFullName.call(name2, "string1", "string2")
+
+printFullName.apply(name, ["string1", "string2"]) //apply and call are similar. It just differs in the way how we are passing arguments
+
+//bind - binds object state with method. can call method directly without arguments
+
+let printMethod = printFullName.bind(name,"string1", "string2")
+
+printMethod()

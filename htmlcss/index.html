@@ -3,44 +3,39 @@
 
 <head>
     <style>
-        .parent {
-            width: 200px;
-            border: 1px solid black;
-        }
-
-        .item {
+        div{
+            color: blue;
             background-color: red;
-            height: 50px;
-            margin: 5px 0;
+            width: 300px;
+            display: inline-block;
+        }
+        span{
+            color:green;
+            display: none;
         }
 
-        .item-percent{
-            width: 50%
+        .img1{
+            width: 100px;
+            height: 200px;
+            float: right; /*img1 always floats to left and text is wrapped around it */
         }
 
-        .item-view-width{
-            width: 50vw;
+        .img2{
+            width: 100px;
+            height: 100px;
+            float: left;
         }
 
-        .rem{
-            font-size: 1rem;
-        }
-
-        .rem-double{
-            font-size: 2rem;
+        P{
+            clear: both;
         }
     </style>
 </head>
 
 <body>
-    <div class="item rem"> REM</div>
-    <div class="item rem-double">2 REM</div>
-
-    <div class="parent">
-        <div class="item"> REM</div>
-        <div class="item"></div>
-        <div class ="item item-view-width">width:50%</div>
-    </div>
+    <img class ="img1" src ="https://source.unsplash.com/4rDCa5hBlCs">
+    <img class ="img2" src ="https://source.unsplash.com/oR0uERTVyD0">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam laudantium quaerat harum facere nesciunt cumque veritatis consequatur sit autem tempora, numquam perferendis nostrum minus aperiam dignissimos temporibus blanditiis! Voluptate tenetur iure deleniti ad explicabo debitis fuga minima, soluta expedita qui veritatis et sequi modi recusandae deserunt cupiditate distinctio obcaecati totam. Delectus reiciendis debitis, blanditiis eos accusantium incidunt dolore magnam aliquam, enim aperiam repellat consequuntur nesciunt hic optio modi laudantium? Labore sequi, tenetur minus dolorum pariatur iste nesciunt ex quae qui rerum veniam fuga odio aliquam perspiciatis quibusdam accusamus blanditiis vel placeat magni! Nostrum asperiores assumenda optio vero dicta! Cupiditate, vitae?</p>
 </body>
 
 </html>
