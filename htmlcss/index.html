@@ -6,35 +6,28 @@
         .item{
             border: 1px solid #333;
             background-color: #777;
-            width: 150px;
             color: yellow;
-            margin: 10px;
         }
 
         .container{
-            display: flex;
-            height: 600px;
-            background-color: #CCC;
-            border: 1px solid black;
-            justify-content: space-around;
-            align-content:space-around;
-            align-items: flex-start ;
+            display: grid;
+            grid-template-columns: 100px 50px;
+            grid-template-rows: 50px 100px;
+            grid-template-areas: 
+                "header header"
+                "sidebar content"
+            ;
         }
 
         .item1{
-            min-height: 50px;
         }
 
         .item2{
-            min-height: 100px;
-            flex-grow: 1;
-            flex-shrink: 1;
+           grid-area: header;
         }
 
         .item3{
-            min-height: 150px;
-            flex-grow: 2;
-            flex-shrink: 2;
+           
         }
     </style>
 </head>
@@ -44,6 +37,8 @@
         <div class="item item1">1</div>
         <div class="item item2">2</div>
         <div class="item item3">3</div>
+        <div class="item item4">4</div>
+        <div class="item item5">5</div>
     </div>
  </body>
 
